@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background:
+    linear-gradient(rgba(255, 249, 230, 0.82), rgba(245, 230, 179, 0.88)),
+    url('BeeFarmforwebsite.jpg') center/cover fixed no-repeat;
+  color: #2d2008;
+}
+
+header {
+  background: rgba(244, 185, 66, 0.92);
+  color: #2d2008;
+  padding: 20px 30px;
+  border-bottom: 4px solid #d89b1a;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+nav a {
+  color: #2d2008;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.member-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  font-weight: bold;
+}
+
+.member-list li {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 20px 60px;
+}
+
+section {
+  background: rgba(255, 255, 255, 0.72);
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  border-left: 5px solid #f4b942;
+}
+
+h2 {
+  color: #8a5a00;
+  margin-top: 0;
+}
+
+p, li {
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 3px solid #f4b942;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+ul {
+  padding-left: 20px;
+}
+
+section h2:nth-of-type(1) {
+  margin-top: 0;
+}
+
+main section:first-of-type {
+  margin-top: 10px;
+}
+
+.skills-list {
+  margin: 10px 0 0;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.skills-list li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.evidence-item {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(122, 89, 21, 0.2);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f7e9b2, #e6d188);
+  border: 2px dashed #b78a1d;
+  border-radius: 10px;
+  min-height: 140px;
+  color: #6b4f10;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.evidence-item h3 {
+  margin: 0 0 8px;
+  color: #8a5a00;
+}
+
+.evidence-item p {
+  margin: 0;
+}
