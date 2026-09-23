@@ -2,148 +2,152 @@
   box-sizing: border-box;
 }
 
+:root {
+  --ink: #2d2418;
+  --muted: #6f6252;
+  --honey: #d88916;
+  --honey-light: #fff4d6;
+  --paper: #fffdf8;
+  --line: #e3c98f;
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background:
-    linear-gradient(rgba(255, 249, 230, 0.82), rgba(245, 230, 179, 0.88)),
-    url('BeeFarmforwebsite.jpg') center/cover fixed no-repeat;
-  color: #2d2008;
+  color: var(--ink);
+  background: #f7f1e5;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.6;
 }
 
 header {
-  background: rgba(244, 185, 66, 0.92);
-  color: #2d2008;
-  padding: 20px 30px;
-  border-bottom: 4px solid #d89b1a;
+  padding: 2rem 1.5rem 2.5rem;
+  color: #fffaf0;
+  text-align: center;
+  background: #3f321f;
 }
 
 nav {
   display: flex;
-  gap: 15px;
   flex-wrap: wrap;
-  margin-bottom: 10px;
+  justify-content: center;
+  gap: 0.5rem 1.25rem;
+  margin-bottom: 2rem;
 }
 
 nav a {
-  color: #2d2008;
+  color: #fffaf0;
   text-decoration: none;
-  font-weight: bold;
 }
 
-nav a:hover {
-  text-decoration: underline;
+nav a:hover,
+nav a:focus {
+  color: #ffd477;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
 }
 
 h1 {
   margin: 0;
-  font-size: 2.5rem;
-}
-
-.member-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  list-style: none;
-  padding: 0;
-  margin: 12px 0 0;
-  font-weight: bold;
-}
-
-.member-list li {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 6px 10px;
-  border-radius: 999px;
+  font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
 main {
-  max-width: 1100px;
+  width: min(100% - 2rem, 900px);
   margin: 0 auto;
-  padding: 30px 20px 60px;
+  padding: 3rem 0 4rem;
 }
 
 section {
-  background: rgba(255, 255, 255, 0.72);
-  padding: 24px 28px;
-  margin-bottom: 20px;
-  border-radius: 14px;
-  border-left: 5px solid #f4b942;
+  padding: 2rem;
+  background: var(--paper);
+  border: 1px solid #eadfc9;
+  box-shadow: 0 8px 25px rgb(63 50 31 / 8%);
 }
 
-h2 {
-  color: #8a5a00;
+section h2 {
   margin-top: 0;
 }
 
-p, li {
-  line-height: 1.6;
-  font-size: 1rem;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  border: 3px solid #f4b942;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-}
-
-ul {
-  padding-left: 20px;
-}
-
-section h2:nth-of-type(1) {
-  margin-top: 0;
-}
-
-main section:first-of-type {
-  margin-top: 10px;
-}
-
-.skills-list {
-  margin: 10px 0 0;
-  padding-left: 20px;
-  list-style: disc;
-}
-
-.skills-list li {
-  margin-bottom: 8px;
-  line-height: 1.6;
-}
-
-.evidence-grid {
+.evidence-timeline {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-  margin-top: 18px;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  padding-left: 2.25rem;
+}
+
+.evidence-timeline::before {
+  position: absolute;
+  top: 0.75rem;
+  bottom: 0.75rem;
+  left: 0.55rem;
+  width: 2px;
+  content: "";
+  background: var(--line);
 }
 
 .evidence-item {
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(122, 89, 21, 0.2);
-  border-radius: 12px;
-  padding: 14px;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(180px, 0.9fr) minmax(0, 1.1fr);
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.25rem;
+  background: #fffaf0;
+  border: 1px solid #eadfc9;
+}
+
+.evidence-item::before {
+  position: absolute;
+  top: 50%;
+  left: -2.05rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  content: "";
+  background: var(--honey);
+  border: 4px solid var(--paper);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--honey);
+  transform: translateY(-50%);
 }
 
 .photo-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #f7e9b2, #e6d188);
-  border: 2px dashed #b78a1d;
-  border-radius: 10px;
-  min-height: 140px;
-  color: #6b4f10;
-  font-weight: bold;
+  display: grid;
+  min-height: 150px;
+  place-items: center;
+  padding: 1rem;
+  color: var(--muted);
   text-align: center;
-  margin-bottom: 12px;
+  background: var(--honey-light);
+  border: 2px dashed var(--line);
 }
 
-.evidence-item h3 {
-  margin: 0 0 8px;
-  color: #8a5a00;
+.evidence-description h3 {
+  margin: 0 0 0.5rem;
+  color: #8b5608;
 }
 
-.evidence-item p {
+.evidence-description p {
   margin: 0;
+  color: var(--muted);
+}
+
+@media (max-width: 600px) {
+  main {
+    width: min(100% - 1rem, 900px);
+    padding-top: 1.5rem;
+  }
+
+  section {
+    padding: 1.25rem;
+  }
+
+  .evidence-item {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
