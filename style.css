@@ -5,8 +5,7 @@
 :root {
   --ink: #2d2418;
   --muted: #6f6252;
-  --honey: #d88916;
-  --honey-light: #fff4d6;
+  --accent: #d88916;
   --paper: #fffdf8;
   --line: #e3c98f;
 }
@@ -15,7 +14,7 @@ body {
   margin: 0;
   color: var(--ink);
   background-color: #f7f1e5;
-  background-image: linear-gradient(rgb(45 36 24 / 28%), rgb(45 36 24 / 28%)), url("https://talkbusiness.net/wp-content/uploads/2018/10/BeeKeeper2_Oct2018.jpg?v=2");
+  background-image: linear-gradient(rgb(45 36 24 / 28%), rgb(45 36 24 / 28%)), url("https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=1800&q=85");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -45,7 +44,7 @@ nav a {
 
 nav a:hover,
 nav a:focus {
-  color: #ffd477;
+  color: #fff3bf;
 }
 
 h1,
@@ -63,17 +62,83 @@ main {
   width: min(100% - 2rem, 900px);
   margin: 0 auto;
   padding: 3rem 0 4rem;
+  background: rgb(255 253 248 / 88%);
+  box-shadow: 0 8px 25px rgb(45 36 24 / 25%);
 }
 
 section {
   padding: 2rem;
-  background: var(--paper);
-  border: 1px solid #eadfc9;
-  box-shadow: 0 8px 25px rgb(63 50 31 / 8%);
 }
 
 section h2 {
   margin-top: 0;
+}
+
+.schedule-chart {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--paper);
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.schedule-chart th,
+.schedule-chart td {
+  padding: 0.75rem;
+  border: 1px solid var(--line);
+  overflow-wrap: anywhere;
+  vertical-align: top;
+}
+
+.schedule-chart th {
+  color: #fffaf0;
+  background: #8b5608;
+  font-weight: 700;
+}
+
+.schedule-chart th:first-child,
+.schedule-chart td:first-child {
+  width: 19%;
+}
+
+.schedule-chart th:last-child,
+.schedule-chart td:last-child {
+  width: 17%;
+}
+
+.schedule-chart tbody tr:nth-child(even) {
+  background: #fff7e5;
+}
+
+.skills-chart {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--paper);
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.skills-chart th,
+.skills-chart td {
+  padding: 0.75rem;
+  border: 1px solid var(--line);
+  overflow-wrap: anywhere;
+  vertical-align: top;
+}
+
+.skills-chart th {
+  color: #fffaf0;
+  background: #8b5608;
+  font-weight: 700;
+}
+
+.skills-chart tbody tr:nth-child(even) {
+  background: #fff7e5;
+}
+
+.empty-skills {
+  color: var(--muted);
+  font-style: italic;
 }
 
 .evidence-timeline {
@@ -102,7 +167,7 @@ section h2 {
   align-items: center;
   padding: 1.25rem;
   background: #fffaf0;
-  border: 1px solid #eadfc9;
+  border: 1px solid var(--line);
 }
 
 .evidence-item::before {
@@ -112,22 +177,31 @@ section h2 {
   width: 0.9rem;
   height: 0.9rem;
   content: "";
-  background: var(--honey);
+  background: var(--accent);
   border: 4px solid var(--paper);
   border-radius: 50%;
-  box-shadow: 0 0 0 1px var(--honey);
+  box-shadow: 0 0 0 1px var(--accent);
   transform: translateY(-50%);
 }
 
 .photo-placeholder {
   display: grid;
-  min-height: 150px;
+  width: 100%;
+  height: 180px;
+  max-height: 180px;
   place-items: center;
   padding: 1rem;
   color: var(--muted);
   text-align: center;
-  background: var(--honey-light);
+  background: #fff4d6;
   border: 2px dashed var(--line);
+  overflow: hidden;
+}
+
+.photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .evidence-description h3 {
@@ -154,4 +228,5 @@ section h2 {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
+
 }

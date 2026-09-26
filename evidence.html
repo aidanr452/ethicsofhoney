@@ -24,10 +24,13 @@
       <p>Use these spaces to add photos, screenshots, or notes that show the project progress.</p>
       <div class="evidence-timeline">
         <article class="evidence-item">
-          <div class="photo-placeholder">Add photo here</div>
+          <div class="photo-placeholder">
+            <img id="evidence-1-photo" src="images/evidence-1.jpg" alt="Aidan's MacBook homescreen while updating the project on September 25, 2026" hidden>
+            <span id="evidence-1-fallback">Add photo here</span>
+          </div>
           <div class="evidence-description">
             <h3>Evidence 1</h3>
-            <p>Explanation placeholder.</p>
+            <p>A screenshot of Aidan's Macbook homescreen on September 25th, 2026 while I added the research and updated the timetable.</p>
           </div>
         </article>
 
@@ -58,5 +61,19 @@
       </div>
     </section>
   </main>
+  <script>
+    const evidenceOnePhoto = document.querySelector("#evidence-1-photo");
+    const evidenceOneFallback = document.querySelector("#evidence-1-fallback");
+    const showEvidenceOnePhoto = () => {
+      evidenceOnePhoto.hidden = false;
+      evidenceOneFallback.hidden = true;
+    };
+
+    if (evidenceOnePhoto.complete && evidenceOnePhoto.naturalWidth > 0) {
+      showEvidenceOnePhoto();
+    } else {
+      evidenceOnePhoto.addEventListener("load", showEvidenceOnePhoto, { once: true });
+    }
+  </script>
 </body>
 </html>
