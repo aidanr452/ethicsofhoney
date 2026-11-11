@@ -35,14 +35,13 @@
         </article>
 
         <article class="evidence-item">
-          <div class="evidence-item"
-          <div class="evidence-description">
+          <div class="photo-placeholder">
             <img id="evidence-2-photo" src="images/evidence-2.jpeg" alt="First Public Demonstration outside of Hoag on October 14, 2026" hidden>
             <span id="evidence-2-fallback">Add photo here</span>
           </div>
           <div class="evidence-description">
             <h3>Evidence 2</h3>
-            <p>Photo taken outside of Hoag during the demonstration on World Food Day, October 14, 2026. </p>
+            <p>Photo taken outside of Hoag during the demonstration on World Food Day, October 14, 2026.</p>
           </div>
         </article>
 
@@ -65,18 +64,19 @@
     </section>
   </main>
   <script>
-    const evidenceOnePhoto = document.querySelector("#evidence-1-photo");
-    const evidenceOneFallback = document.querySelector("#evidence-1-fallback");
-    const showEvidenceOnePhoto = () => {
-      evidenceOnePhoto.hidden = false;
-      evidenceOneFallback.hidden = true;
-    };
+    document.querySelectorAll(".photo-placeholder img").forEach((photo) => {
+      const fallback = document.querySelector(`#${photo.id.replace("-photo", "-fallback")}`);
+      const showPhoto = () => {
+        photo.hidden = false;
+        fallback.hidden = true;
+      };
 
-    if (evidenceOnePhoto.complete && evidenceOnePhoto.naturalWidth > 0) {
-      showEvidenceOnePhoto();
-    } else {
-      evidenceOnePhoto.addEventListener("load", showEvidenceOnePhoto, { once: true });
-    }
+      if (photo.complete && photo.naturalWidth > 0) {
+        showPhoto();
+      } else {
+        photo.addEventListener("load", showPhoto, { once: true });
+      }
+    });
   </script>
 </body>
 </html>
